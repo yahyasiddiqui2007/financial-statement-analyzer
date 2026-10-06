@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "app",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "export FSA_SEC_USER_AGENT=\"${FSA_SEC_USER_AGENT:-FSA-student-project admin@example.com}\"; exec \"$HOME/.local/bin/uv\" run uvicorn fsa.api.app:app --port 8000"],
+      "port": 8000
+    },
+    {
+      "name": "web-dev",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": ["-c", "cd frontend && PATH=\"$HOME/.local/node/bin:$PATH\" exec npm run dev"],
+      "port": 5173
+    }
+  ]
+}

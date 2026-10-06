@@ -1,0 +1,2419 @@
+{
+  "company": {
+    "cik": "0001234567",
+    "ticker": "EXMP",
+    "name": "Example Manufacturing Corp",
+    "edgar_url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001234567&type=10-K&dateb=&owner=include&count=40"
+  },
+  "source": {
+    "provider": "SEC EDGAR XBRL company facts (10-K and 10-K/A filings)",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001234567.json",
+    "retrieved_at": "2026-01-15T12:00:00Z"
+  },
+  "periods": [
+    {
+      "start": "2022-07-01",
+      "end": "2023-06-30",
+      "fiscal_year": null,
+      "label": "Year ended 2023-06-30",
+      "has_prior": false
+    },
+    {
+      "start": "2023-07-01",
+      "end": "2024-06-30",
+      "fiscal_year": 2024,
+      "label": "FY2024 (ended 2024-06-30)",
+      "has_prior": true
+    },
+    {
+      "start": "2024-07-01",
+      "end": "2025-06-30",
+      "fiscal_year": 2025,
+      "label": "FY2025 (ended 2025-06-30)",
+      "has_prior": true
+    }
+  ],
+  "statements": [
+    {
+      "id": "income_statement",
+      "title": "Income Statement",
+      "rows": [
+        {
+          "item": "revenue",
+          "label": "Revenue",
+          "cells": [
+            {
+              "value": "800000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Revenues",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "1000000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Revenues",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.25",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "1200000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Revenues",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.2",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "cost_of_revenue",
+          "label": "Cost of revenue",
+          "cells": [
+            {
+              "value": "480000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "CostOfRevenue",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "600000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "CostOfRevenue",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.25",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "690000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "CostOfRevenue",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.15",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "gross_profit",
+          "label": "Gross profit",
+          "cells": [
+            {
+              "value": "320000000",
+              "derived": true,
+              "derivation": "Revenue \u2212 Cost of revenue",
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Revenues",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                },
+                {
+                  "tag": "CostOfRevenue",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "400000000",
+              "derived": true,
+              "derivation": "Revenue \u2212 Cost of revenue",
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Revenues",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                },
+                {
+                  "tag": "CostOfRevenue",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.25",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "510000000",
+              "derived": true,
+              "derivation": "Revenue \u2212 Cost of revenue",
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Revenues",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                },
+                {
+                  "tag": "CostOfRevenue",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.275",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "operating_income",
+          "label": "Operating income",
+          "cells": [
+            {
+              "value": "120000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "OperatingIncomeLoss",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "160000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "OperatingIncomeLoss",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.3333333333333333333333333333",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "210000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "OperatingIncomeLoss",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.3125",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "net_income",
+          "label": "Net income",
+          "cells": [
+            {
+              "value": "80000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "NetIncomeLoss",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "96000000",
+              "derived": false,
+              "derivation": null,
+              "restated": true,
+              "sources": [
+                {
+                  "tag": "NetIncomeLoss",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.2",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "130000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "NetIncomeLoss",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.3541666666666666666666666667",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "balance_sheet",
+      "title": "Balance Sheet",
+      "rows": [
+        {
+          "item": "cash_and_equivalents",
+          "label": "Cash and cash equivalents",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "short_term_investments",
+          "label": "Short-term investments",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "accounts_receivable",
+          "label": "Accounts receivable",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "inventory",
+          "label": "Inventory",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "current_assets",
+          "label": "Total current assets",
+          "cells": [
+            {
+              "value": "600000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "AssetsCurrent",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "700000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "AssetsCurrent",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.1666666666666666666666666667",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "800000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "AssetsCurrent",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.1428571428571428571428571429",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "total_assets",
+          "label": "Total assets",
+          "cells": [
+            {
+              "value": "1800000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Assets",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "2200000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Assets",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.2222222222222222222222222222",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "2600000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "Assets",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.1818181818181818181818181818",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "current_liabilities",
+          "label": "Total current liabilities",
+          "cells": [
+            {
+              "value": "400000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "LiabilitiesCurrent",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "500000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "LiabilitiesCurrent",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.25",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "500000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "LiabilitiesCurrent",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "total_liabilities",
+          "label": "Total liabilities",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "debt_current",
+          "label": "Total current debt",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "long_term_debt_current",
+          "label": "Current portion of long-term debt",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "commercial_paper",
+          "label": "Commercial paper",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "short_term_borrowings",
+          "label": "Short-term borrowings",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "long_term_debt_noncurrent",
+          "label": "Long-term debt (non-current)",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "total_debt",
+          "label": "Total debt",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "total_equity",
+          "label": "Total shareholders' equity",
+          "cells": [
+            {
+              "value": "900000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "StockholdersEquity",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "1100000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "StockholdersEquity",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.2222222222222222222222222222",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "1300000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "StockholdersEquity",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.1818181818181818181818181818",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cash_flow",
+      "title": "Cash Flow Statement",
+      "rows": [
+        {
+          "item": "operating_cash_flow",
+          "label": "Cash from operating activities",
+          "cells": [
+            {
+              "value": "150000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "NetCashProvidedByUsedInOperatingActivities",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "190000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "NetCashProvidedByUsedInOperatingActivities",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.2666666666666666666666666667",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "240000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "NetCashProvidedByUsedInOperatingActivities",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.2631578947368421052631578947",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "capital_expenditures",
+          "label": "Capital expenditures",
+          "cells": [
+            {
+              "value": "40000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                  "accession_number": "0001234567-24-000010",
+                  "form": "10-K",
+                  "filed": "2024-08-14",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456724000010/"
+                }
+              ],
+              "change": null
+            },
+            {
+              "value": "50000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.25",
+                "status": "ok",
+                "reason": null
+              }
+            },
+            {
+              "value": "60000000",
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [
+                {
+                  "tag": "PaymentsToAcquirePropertyPlantAndEquipment",
+                  "accession_number": "0001234567-25-000012",
+                  "form": "10-K",
+                  "filed": "2025-08-13",
+                  "url": "https://www.sec.gov/Archives/edgar/data/1234567/000123456725000012/"
+                }
+              ],
+              "change": {
+                "value": "0.2",
+                "status": "ok",
+                "reason": null
+              }
+            }
+          ]
+        },
+        {
+          "item": "investing_cash_flow",
+          "label": "Cash from investing activities",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        },
+        {
+          "item": "financing_cash_flow",
+          "label": "Cash from financing activities",
+          "cells": [
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": null
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            },
+            {
+              "value": null,
+              "derived": false,
+              "derivation": null,
+              "restated": false,
+              "sources": [],
+              "change": {
+                "value": null,
+                "status": "missing_input",
+                "reason": "Missing required input(s): current, prior."
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "name": "revenue_growth",
+      "label": "Revenue growth",
+      "format": "percent",
+      "formula": "(Current revenue \u2212 Prior revenue) / Prior revenue",
+      "values": [
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): prior_revenue.",
+          "difference": null,
+          "inputs": {
+            "current_revenue": "800000000",
+            "prior_revenue": null
+          }
+        },
+        {
+          "value": "0.25",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "current_revenue": "1000000000",
+            "prior_revenue": "800000000"
+          }
+        },
+        {
+          "value": "0.2",
+          "status": "ok",
+          "reason": null,
+          "difference": "-0.05",
+          "inputs": {
+            "current_revenue": "1200000000",
+            "prior_revenue": "1000000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "gross_margin",
+      "label": "Gross margin",
+      "format": "percent",
+      "formula": "Gross profit / Revenue",
+      "values": [
+        {
+          "value": "0.4",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "gross_profit": "320000000",
+            "revenue": "800000000"
+          }
+        },
+        {
+          "value": "0.4",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.0",
+          "inputs": {
+            "gross_profit": "400000000",
+            "revenue": "1000000000"
+          }
+        },
+        {
+          "value": "0.425",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.025",
+          "inputs": {
+            "gross_profit": "510000000",
+            "revenue": "1200000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "operating_margin",
+      "label": "Operating margin",
+      "format": "percent",
+      "formula": "Operating income / Revenue",
+      "values": [
+        {
+          "value": "0.15",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "operating_income": "120000000",
+            "revenue": "800000000"
+          }
+        },
+        {
+          "value": "0.16",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.01",
+          "inputs": {
+            "operating_income": "160000000",
+            "revenue": "1000000000"
+          }
+        },
+        {
+          "value": "0.175",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.015",
+          "inputs": {
+            "operating_income": "210000000",
+            "revenue": "1200000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "net_margin",
+      "label": "Net margin",
+      "format": "percent",
+      "formula": "Net income / Revenue",
+      "values": [
+        {
+          "value": "0.1",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "net_income": "80000000",
+            "revenue": "800000000"
+          }
+        },
+        {
+          "value": "0.096",
+          "status": "ok",
+          "reason": null,
+          "difference": "-0.004",
+          "inputs": {
+            "net_income": "96000000",
+            "revenue": "1000000000"
+          }
+        },
+        {
+          "value": "0.1083333333333333333333333333",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.0123333333333333333333333333",
+          "inputs": {
+            "net_income": "130000000",
+            "revenue": "1200000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "return_on_assets",
+      "label": "Return on assets",
+      "format": "percent",
+      "formula": "Net income / Average total assets (beginning and end of period)",
+      "values": [
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): total_assets_begin.",
+          "difference": null,
+          "inputs": {
+            "net_income": "80000000",
+            "total_assets_begin": null,
+            "total_assets_end": "1800000000"
+          }
+        },
+        {
+          "value": "0.048",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "net_income": "96000000",
+            "total_assets_begin": "1800000000",
+            "total_assets_end": "2200000000"
+          }
+        },
+        {
+          "value": "0.05416666666666666666666666667",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.00616666666666666666666666667",
+          "inputs": {
+            "net_income": "130000000",
+            "total_assets_begin": "2200000000",
+            "total_assets_end": "2600000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "return_on_equity",
+      "label": "Return on equity",
+      "format": "percent",
+      "formula": "Net income / Average shareholders' equity (beginning and end of period)",
+      "values": [
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): equity_begin.",
+          "difference": null,
+          "inputs": {
+            "net_income": "80000000",
+            "equity_begin": null,
+            "equity_end": "900000000"
+          }
+        },
+        {
+          "value": "0.096",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "net_income": "96000000",
+            "equity_begin": "900000000",
+            "equity_end": "1100000000"
+          }
+        },
+        {
+          "value": "0.1083333333333333333333333333",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.0123333333333333333333333333",
+          "inputs": {
+            "net_income": "130000000",
+            "equity_begin": "1100000000",
+            "equity_end": "1300000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "current_ratio",
+      "label": "Current ratio",
+      "format": "ratio",
+      "formula": "Current assets / Current liabilities",
+      "values": [
+        {
+          "value": "1.5",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "current_assets": "600000000",
+            "current_liabilities": "400000000"
+          }
+        },
+        {
+          "value": "1.4",
+          "status": "ok",
+          "reason": null,
+          "difference": "-0.1",
+          "inputs": {
+            "current_assets": "700000000",
+            "current_liabilities": "500000000"
+          }
+        },
+        {
+          "value": "1.6",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.2",
+          "inputs": {
+            "current_assets": "800000000",
+            "current_liabilities": "500000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "quick_ratio",
+      "label": "Quick ratio",
+      "format": "ratio",
+      "formula": "(Cash and equivalents + Short-term investments + Accounts receivable) / Current liabilities",
+      "values": [
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): cash_and_equivalents, short_term_investments, accounts_receivable.",
+          "difference": null,
+          "inputs": {
+            "cash_and_equivalents": null,
+            "short_term_investments": null,
+            "accounts_receivable": null,
+            "current_liabilities": "400000000"
+          }
+        },
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): cash_and_equivalents, short_term_investments, accounts_receivable.",
+          "difference": null,
+          "inputs": {
+            "cash_and_equivalents": null,
+            "short_term_investments": null,
+            "accounts_receivable": null,
+            "current_liabilities": "500000000"
+          }
+        },
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): cash_and_equivalents, short_term_investments, accounts_receivable.",
+          "difference": null,
+          "inputs": {
+            "cash_and_equivalents": null,
+            "short_term_investments": null,
+            "accounts_receivable": null,
+            "current_liabilities": "500000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "debt_to_equity",
+      "label": "Debt to equity",
+      "format": "ratio",
+      "formula": "Total debt / Total shareholders' equity",
+      "values": [
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): total_debt.",
+          "difference": null,
+          "inputs": {
+            "total_debt": null,
+            "total_equity": "900000000"
+          }
+        },
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): total_debt.",
+          "difference": null,
+          "inputs": {
+            "total_debt": null,
+            "total_equity": "1100000000"
+          }
+        },
+        {
+          "value": null,
+          "status": "missing_input",
+          "reason": "Missing required input(s): total_debt.",
+          "difference": null,
+          "inputs": {
+            "total_debt": null,
+            "total_equity": "1300000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "free_cash_flow",
+      "label": "Free cash flow",
+      "format": "usd",
+      "formula": "Operating cash flow \u2212 Capital expenditures",
+      "values": [
+        {
+          "value": "110000000",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "operating_cash_flow": "150000000",
+            "capital_expenditures": "40000000"
+          }
+        },
+        {
+          "value": "140000000",
+          "status": "ok",
+          "reason": null,
+          "difference": "30000000",
+          "inputs": {
+            "operating_cash_flow": "190000000",
+            "capital_expenditures": "50000000"
+          }
+        },
+        {
+          "value": "180000000",
+          "status": "ok",
+          "reason": null,
+          "difference": "40000000",
+          "inputs": {
+            "operating_cash_flow": "240000000",
+            "capital_expenditures": "60000000"
+          }
+        }
+      ]
+    },
+    {
+      "name": "fcf_margin",
+      "label": "FCF margin",
+      "format": "percent",
+      "formula": "(Operating cash flow \u2212 Capital expenditures) / Revenue",
+      "values": [
+        {
+          "value": "0.1375",
+          "status": "ok",
+          "reason": null,
+          "difference": null,
+          "inputs": {
+            "operating_cash_flow": "150000000",
+            "capital_expenditures": "40000000",
+            "revenue": "800000000"
+          }
+        },
+        {
+          "value": "0.14",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.0025",
+          "inputs": {
+            "operating_cash_flow": "190000000",
+            "capital_expenditures": "50000000",
+            "revenue": "1000000000"
+          }
+        },
+        {
+          "value": "0.15",
+          "status": "ok",
+          "reason": null,
+          "difference": "0.01",
+          "inputs": {
+            "operating_cash_flow": "240000000",
+            "capital_expenditures": "60000000",
+            "revenue": "1200000000"
+          }
+        }
+      ]
+    }
+  ],
+  "trends": [
+    {
+      "requested_years": 3,
+      "years": 3,
+      "start_label": "the year ended 2023-06-30",
+      "end_label": "FY2025",
+      "findings": [
+        {
+          "topic": "revenue_growth",
+          "title": "Revenue growth",
+          "direction": "increasing",
+          "summary": "Revenue grew from $800M in the year ended 2023-06-30 to $1,200M in FY2025, a compound annual growth rate of 22.5% over 2 years.",
+          "details": [
+            "Revenue increased in 2 of 2 year-over-year comparisons.",
+            "Year-over-year changes ranged from +20.0% (FY2025) to +25.0% (FY2024).",
+            "Growth in FY2025 (+20.0%) was below the 2-year compound rate (22.5%)."
+          ],
+          "statistics": [
+            {
+              "key": "cagr",
+              "label": "CAGR, the year ended 2023-06-30\u2013FY2025",
+              "format": "percent",
+              "value": "0.224744871391589049098642037",
+              "status": "ok",
+              "reason": null,
+              "formula": "(Ending value / Beginning value)^(1 / Years) \u2212 1",
+              "inputs": {
+                "beginning_value": "800000000",
+                "ending_value": "1200000000",
+                "years": "2"
+              }
+            },
+            {
+              "key": "total_change",
+              "label": "Total change",
+              "format": "usd_change",
+              "value": "400000000",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "1200000000",
+                "prior": "800000000"
+              }
+            },
+            {
+              "key": "total_change_pct",
+              "label": "Total change (%)",
+              "format": "percent_change",
+              "value": "0.5",
+              "status": "ok",
+              "reason": null,
+              "formula": "(Current \u2212 Prior) / Prior",
+              "inputs": {
+                "current": "1200000000",
+                "prior": "800000000"
+              }
+            }
+          ],
+          "series": [
+            {
+              "key": "revenue",
+              "label": "Revenue",
+              "format": "usd",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "800000000"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "1000000000"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "1200000000"
+                }
+              ]
+            },
+            {
+              "key": "revenue_yoy",
+              "label": "Year-over-year change",
+              "format": "percent_change",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "0.25"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "0.2"
+                }
+              ]
+            }
+          ],
+          "method": "Direction comes from the compound annual growth rate (CAGR) between the first and last year: above +1% a year is increasing, below \u22121% a year is decreasing, otherwise stable. When CAGR is not meaningful (a negative value at either end, such as a net loss), the direction follows the sign of the total change instead. Changes are calculated from unrounded values, so they can differ by 0.1 from the difference between the rounded figures shown."
+        },
+        {
+          "topic": "margins",
+          "title": "Margins",
+          "direction": "mixed",
+          "summary": "Margins moved in different directions between the year ended 2023-06-30 and FY2025.",
+          "details": [
+            "Gross margin expanded, from 40.0% to 42.5% (+2.5 pp).",
+            "Operating margin expanded, from 15.0% to 17.5% (+2.5 pp).",
+            "Net margin was stable, from 10.0% to 10.8% (+0.8 pp)."
+          ],
+          "statistics": [
+            {
+              "key": "gross_margin_change",
+              "label": "Gross margin change",
+              "format": "pp_change",
+              "value": "0.025",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "0.425",
+                "prior": "0.4"
+              }
+            },
+            {
+              "key": "operating_margin_change",
+              "label": "Operating margin change",
+              "format": "pp_change",
+              "value": "0.025",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "0.175",
+                "prior": "0.15"
+              }
+            },
+            {
+              "key": "net_margin_change",
+              "label": "Net margin change",
+              "format": "pp_change",
+              "value": "0.0083333333333333333333333333",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "0.1083333333333333333333333333",
+                "prior": "0.1"
+              }
+            }
+          ],
+          "series": [
+            {
+              "key": "gross_margin",
+              "label": "Gross",
+              "format": "percent",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "0.4"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "0.4"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "0.425"
+                }
+              ]
+            },
+            {
+              "key": "operating_margin",
+              "label": "Operating",
+              "format": "percent",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "0.15"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "0.16"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "0.175"
+                }
+              ]
+            },
+            {
+              "key": "net_margin",
+              "label": "Net",
+              "format": "percent",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "0.1"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "0.096"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "0.1083333333333333333333333333"
+                }
+              ]
+            }
+          ],
+          "method": "Each margin is compared between the first and last year. A change of more than +1 percentage point is expansion, less than \u22121 point is contraction, otherwise stable. The overall direction is mixed when the margins moved differently. Changes are calculated from unrounded values, so they can differ by 0.1 from the difference between the rounded figures shown."
+        },
+        {
+          "topic": "net_income_growth",
+          "title": "Net income growth",
+          "direction": "increasing",
+          "summary": "Net income grew from $80.0M in the year ended 2023-06-30 to $130M in FY2025, a compound annual growth rate of 27.5% over 2 years.",
+          "details": [
+            "Net income increased in 2 of 2 year-over-year comparisons.",
+            "Year-over-year changes ranged from +20.0% (FY2024) to +35.4% (FY2025)."
+          ],
+          "statistics": [
+            {
+              "key": "cagr",
+              "label": "CAGR, the year ended 2023-06-30\u2013FY2025",
+              "format": "percent",
+              "value": "0.274754878398196207507056027",
+              "status": "ok",
+              "reason": null,
+              "formula": "(Ending value / Beginning value)^(1 / Years) \u2212 1",
+              "inputs": {
+                "beginning_value": "80000000",
+                "ending_value": "130000000",
+                "years": "2"
+              }
+            },
+            {
+              "key": "total_change",
+              "label": "Total change",
+              "format": "usd_change",
+              "value": "50000000",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "130000000",
+                "prior": "80000000"
+              }
+            },
+            {
+              "key": "total_change_pct",
+              "label": "Total change (%)",
+              "format": "percent_change",
+              "value": "0.625",
+              "status": "ok",
+              "reason": null,
+              "formula": "(Current \u2212 Prior) / Prior",
+              "inputs": {
+                "current": "130000000",
+                "prior": "80000000"
+              }
+            }
+          ],
+          "series": [
+            {
+              "key": "net_income",
+              "label": "Net income",
+              "format": "usd",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "80000000"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "96000000"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "130000000"
+                }
+              ]
+            },
+            {
+              "key": "net_income_yoy",
+              "label": "Year-over-year change",
+              "format": "percent_change",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "0.2"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "0.3541666666666666666666666667"
+                }
+              ]
+            }
+          ],
+          "method": "Direction comes from the compound annual growth rate (CAGR) between the first and last year: above +1% a year is increasing, below \u22121% a year is decreasing, otherwise stable. When CAGR is not meaningful (a negative value at either end, such as a net loss), the direction follows the sign of the total change instead. Changes are calculated from unrounded values, so they can differ by 0.1 from the difference between the rounded figures shown."
+        },
+        {
+          "topic": "fcf_growth",
+          "title": "Free cash flow growth",
+          "direction": "increasing",
+          "summary": "Free cash flow grew from $110M in the year ended 2023-06-30 to $180M in FY2025, a compound annual growth rate of 27.9% over 2 years.",
+          "details": [
+            "Free cash flow increased in 2 of 2 year-over-year comparisons.",
+            "Year-over-year changes ranged from +27.3% (FY2024) to +28.6% (FY2025)."
+          ],
+          "statistics": [
+            {
+              "key": "cagr",
+              "label": "CAGR, the year ended 2023-06-30\u2013FY2025",
+              "format": "percent",
+              "value": "0.279204298133662605790626394",
+              "status": "ok",
+              "reason": null,
+              "formula": "(Ending value / Beginning value)^(1 / Years) \u2212 1",
+              "inputs": {
+                "beginning_value": "110000000",
+                "ending_value": "180000000",
+                "years": "2"
+              }
+            },
+            {
+              "key": "total_change",
+              "label": "Total change",
+              "format": "usd_change",
+              "value": "70000000",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "180000000",
+                "prior": "110000000"
+              }
+            },
+            {
+              "key": "total_change_pct",
+              "label": "Total change (%)",
+              "format": "percent_change",
+              "value": "0.6363636363636363636363636364",
+              "status": "ok",
+              "reason": null,
+              "formula": "(Current \u2212 Prior) / Prior",
+              "inputs": {
+                "current": "180000000",
+                "prior": "110000000"
+              }
+            }
+          ],
+          "series": [
+            {
+              "key": "free_cash_flow",
+              "label": "Free cash flow",
+              "format": "usd",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "110000000"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "140000000"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "180000000"
+                }
+              ]
+            },
+            {
+              "key": "free_cash_flow_yoy",
+              "label": "Year-over-year change",
+              "format": "percent_change",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "0.2727272727272727272727272727"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "0.2857142857142857142857142857"
+                }
+              ]
+            }
+          ],
+          "method": "Free cash flow = operating cash flow \u2212 capital expenditures. Direction comes from the compound annual growth rate (CAGR) between the first and last year: above +1% a year is increasing, below \u22121% a year is decreasing, otherwise stable. When CAGR is not meaningful (a negative value at either end, such as a net loss), the direction follows the sign of the total change instead. Changes are calculated from unrounded values, so they can differ by 0.1 from the difference between the rounded figures shown."
+        },
+        {
+          "topic": "debt_changes",
+          "title": "Debt",
+          "direction": "insufficient_data",
+          "summary": "Not enough data: total debt is not available for the year ended 2023-06-30, FY2024, FY2025.",
+          "details": [],
+          "statistics": [],
+          "series": [
+            {
+              "key": "total_debt",
+              "label": "Total debt",
+              "format": "usd",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": null
+                }
+              ]
+            },
+            {
+              "key": "debt_to_equity",
+              "label": "Debt-to-equity",
+              "format": "ratio",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": null
+                }
+              ]
+            }
+          ],
+          "method": "Total debt is borrowings only (not all liabilities). Direction comes from the percentage change between the first and last year-end: more than +5% is increasing, less than \u22125% is decreasing, otherwise stable. If the starting balance was zero, the direction follows the sign of the dollar change. Changes are calculated from unrounded values, so they can differ by 0.1 from the difference between the rounded figures shown."
+        },
+        {
+          "topic": "cash_changes",
+          "title": "Cash",
+          "direction": "insufficient_data",
+          "summary": "Not enough data: cash and cash equivalents are not available for the year ended 2023-06-30, FY2024, FY2025.",
+          "details": [],
+          "statistics": [],
+          "series": [
+            {
+              "key": "cash_and_equivalents",
+              "label": "Cash and cash equivalents",
+              "format": "usd",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": null
+                }
+              ]
+            }
+          ],
+          "method": "Cash excludes short-term investments, which are reported separately. Direction comes from the percentage change between the first and last year-end: more than +5% is increasing, less than \u22125% is decreasing, otherwise stable. If the starting balance was zero, the direction follows the sign of the dollar change. Changes are calculated from unrounded values, so they can differ by 0.1 from the difference between the rounded figures shown."
+        },
+        {
+          "topic": "asset_growth",
+          "title": "Asset growth",
+          "direction": "increasing",
+          "summary": "Total assets grew from $1,800M in the year ended 2023-06-30 to $2,600M in FY2025, a compound annual growth rate of 20.2% over 2 years.",
+          "details": [
+            "Total assets increased in 2 of 2 year-over-year comparisons.",
+            "Year-over-year changes ranged from +18.2% (FY2025) to +22.2% (FY2024).",
+            "Over the same years, total assets grew at 20.2% a year and revenue at 22.5% a year."
+          ],
+          "statistics": [
+            {
+              "key": "cagr",
+              "label": "CAGR, the year ended 2023-06-30\u2013FY2025",
+              "format": "percent",
+              "value": "0.201850425154663097706407089",
+              "status": "ok",
+              "reason": null,
+              "formula": "(Ending value / Beginning value)^(1 / Years) \u2212 1",
+              "inputs": {
+                "beginning_value": "1800000000",
+                "ending_value": "2600000000",
+                "years": "2"
+              }
+            },
+            {
+              "key": "total_change",
+              "label": "Total change",
+              "format": "usd_change",
+              "value": "800000000",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "2600000000",
+                "prior": "1800000000"
+              }
+            },
+            {
+              "key": "total_change_pct",
+              "label": "Total change (%)",
+              "format": "percent_change",
+              "value": "0.4444444444444444444444444444",
+              "status": "ok",
+              "reason": null,
+              "formula": "(Current \u2212 Prior) / Prior",
+              "inputs": {
+                "current": "2600000000",
+                "prior": "1800000000"
+              }
+            }
+          ],
+          "series": [
+            {
+              "key": "total_assets",
+              "label": "Total assets",
+              "format": "usd",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "1800000000"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "2200000000"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "2600000000"
+                }
+              ]
+            },
+            {
+              "key": "total_assets_yoy",
+              "label": "Year-over-year change",
+              "format": "percent_change",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": null
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "0.2222222222222222222222222222"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "0.1818181818181818181818181818"
+                }
+              ]
+            }
+          ],
+          "method": "Direction comes from the compound annual growth rate (CAGR) between the first and last year: above +1% a year is increasing, below \u22121% a year is decreasing, otherwise stable. When CAGR is not meaningful (a negative value at either end, such as a net loss), the direction follows the sign of the total change instead. Changes are calculated from unrounded values, so they can differ by 0.1 from the difference between the rounded figures shown."
+        },
+        {
+          "topic": "working_capital",
+          "title": "Working capital",
+          "direction": "increasing",
+          "summary": "Working capital increased, from $200M at the end of the year ended 2023-06-30 to $300M at the end of FY2025 (+$100M).",
+          "details": [
+            "The current ratio went from 1.50x to 1.60x."
+          ],
+          "statistics": [
+            {
+              "key": "start",
+              "label": "Working capital, the year ended 2023-06-30",
+              "format": "usd",
+              "value": "200000000",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current assets \u2212 Current liabilities",
+              "inputs": {
+                "current_assets": "600000000",
+                "current_liabilities": "400000000"
+              }
+            },
+            {
+              "key": "end",
+              "label": "Working capital, FY2025",
+              "format": "usd",
+              "value": "300000000",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current assets \u2212 Current liabilities",
+              "inputs": {
+                "current_assets": "800000000",
+                "current_liabilities": "500000000"
+              }
+            },
+            {
+              "key": "change",
+              "label": "Change",
+              "format": "usd_change",
+              "value": "100000000",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "300000000",
+                "prior": "200000000"
+              }
+            },
+            {
+              "key": "current_ratio_change",
+              "label": "Current ratio change",
+              "format": "ratio_change",
+              "value": "0.1",
+              "status": "ok",
+              "reason": null,
+              "formula": "Current \u2212 Prior",
+              "inputs": {
+                "current": "1.6",
+                "prior": "1.5"
+              }
+            }
+          ],
+          "series": [
+            {
+              "key": "working_capital",
+              "label": "Working capital",
+              "format": "usd",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "200000000"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "200000000"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "300000000"
+                }
+              ]
+            },
+            {
+              "key": "current_ratio",
+              "label": "Current ratio",
+              "format": "ratio",
+              "points": [
+                {
+                  "label": "the year ended 2023-06-30",
+                  "end": "2023-06-30",
+                  "value": "1.5"
+                },
+                {
+                  "label": "FY2024",
+                  "end": "2024-06-30",
+                  "value": "1.4"
+                },
+                {
+                  "label": "FY2025",
+                  "end": "2025-06-30",
+                  "value": "1.6"
+                }
+              ]
+            }
+          ],
+          "method": "Working capital = current assets \u2212 current liabilities, calculated for each year-end. A change smaller than 1% of the last year's revenue counts as stable; otherwise the direction follows the sign of the change. Without revenue, any change counts. Changes are calculated from unrounded values, so they can differ by 0.1 from the difference between the rounded figures shown."
+        }
+      ],
+      "notes": []
+    }
+  ],
+  "warnings": [
+    "Skipped 1 malformed fact(s) in the SEC data."
+  ]
+}
