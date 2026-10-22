@@ -23,6 +23,7 @@ filled with zero.
 - **Data quality handling:** duplicate filings, restatements, amendments, derived values and
   edge cases such as negative shareholders' equity and banks without current/non-current splits
 - Light and dark themes, responsive down to phone width, shareable URLs (`?ticker=AAPL`)
+- Installable as an app on phones and computers (Progressive Web App)
 
 ## Architecture
 
@@ -94,6 +95,20 @@ For frontend development with live reload, keep the server running and start
 
 There is also a command-line preview: `uv run python -m fsa AAPL --years 5`.
 
+## Deploying
+
+The repository includes a `Dockerfile` (one container serves the API and the website) and a
+`render.yaml` blueprint for [Render](https://render.com):
+
+1. In Render, choose **New → Blueprint** and select this repository.
+2. Fill in `FSA_SEC_USER_AGENT` (your name and email, required by the SEC) and, optionally,
+   `ANTHROPIC_API_KEY` to enable the AI analysis.
+3. Render builds the image and gives you a public URL. Every push to `main` redeploys.
+
+On a public deployment, new AI analyses are limited per visitor and site-wide per day
+(`FSA_AI_PER_CLIENT_DAILY`, default 5; `FSA_AI_TOTAL_DAILY`, default 50) so the API bill stays
+bounded. Cached analyses don't count toward the limits.
+
 ## Tests
 
 ```bash
@@ -112,7 +127,8 @@ example API response identical to what the backend produces.
 - Annual data only (no quarterly figures yet).
 - Total debt is derived from reported debt components; unreported components are listed in the
   derivation note shown with the value.
-- Data is cached in memory for an hour; there is no database yet.
+- Data is cached in memory for an hour; there is no database yet. Caches and AI limits reset
+  when the server restarts (on Render's free plan, after it sleeps from inactivity).
 
 ## Data source and disclaimer
 

@@ -10,6 +10,7 @@ export type ApiErrorCode =
   | "server_misconfigured"
   | "ai_not_configured"
   | "ai_unavailable"
+  | "ai_rate_limited"
   | "network"
   | "unknown";
 
@@ -22,6 +23,7 @@ const KNOWN_CODES = new Set<string>([
   "server_misconfigured",
   "ai_not_configured",
   "ai_unavailable",
+  "ai_rate_limited",
 ]);
 
 export class ApiError extends Error {

@@ -1,0 +1,21 @@
+# Render Blueprint (https://render.com/docs/blueprint-spec).
+# In Render: New → Blueprint → pick this repository.
+services:
+  - type: web
+    name: financial-statement-analyzer
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/health
+    autoDeploy: true  # redeploys on every push to main
+    envVars:
+      # Required by the SEC: your name and email, e.g. "Jane Doe jane@example.com".
+      - key: FSA_SEC_USER_AGENT
+        sync: false
+      # Optional: enables the AI analysis. Leave empty to run without it.
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      # Cost protection for the AI analysis (new analyses per rolling 24 hours).
+      - key: FSA_AI_PER_CLIENT_DAILY
+        value: "5"
+      - key: FSA_AI_TOTAL_DAILY
+        value: "50"

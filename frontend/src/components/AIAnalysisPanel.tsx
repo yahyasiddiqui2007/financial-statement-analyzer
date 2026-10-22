@@ -90,19 +90,23 @@ export function AIAnalysisPanel({ ticker }: { ticker: string }) {
   );
 }
 
+const ERROR_TITLES: Partial<Record<ApiError["code"], string>> = {
+  ai_not_configured: "AI analysis is not configured",
+  ai_rate_limited: "Daily AI limit reached",
+};
+
 function AIError({ error, onRetry }: { error: ApiError; onRetry: () => void }) {
   return (
     <div className="ai__error" role="alert">
-      <p className="error__title">
-        {error.code === "ai_not_configured" ? "AI analysis is not configured" : "AI analysis failed"}
-      </p>
+      <p className="error__title">{ERROR_TITLES[error.code] ?? "AI analysis failed"}</p>
       <p className="error__message">{error.message}</p>
-      {error.code === "ai_not_configured" ? (
+      {error.code === "ai_not_configured" && (
         <p className="error__hint">
           Add an Anthropic API key, then restart the server:{" "}
           <code>export ANTHROPIC_API_KEY=…</code>
         </p>
-      ) : (
+      )}
+      {error.code !== "ai_not_configured" && error.code !== "ai_rate_limited" && (
         <button type="button" className="button" onClick={onRetry}>
           Try again
         </button>

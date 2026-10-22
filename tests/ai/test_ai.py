@@ -24,6 +24,7 @@ from fsa.ai import (
 )
 from fsa.ai.validation import RawClaim, check_claim, numbers_in
 from fsa.api.app import create_app
+from fsa.api.limits import DailyQuota
 from fsa.ingestion import FinancialHistory
 from fsa.ingestion.companyfacts import parse_company_facts
 from fsa.ingestion.line_items import ALL_TAGS
@@ -316,7 +317,9 @@ class TestClaudeCompleter:
 
 
 class TestEndpoint:
-    def make_client(self, reply: str | Exception) -> tuple[TestClient, list[int]]:
+    def make_client(
+        self, reply: str | Exception, quota: DailyQuota | None = None
+    ) -> tuple[TestClient, list[int]]:
         calls: list[int] = []
 
         def analyst(history: FinancialHistory) -> Any:
@@ -325,7 +328,9 @@ class TestEndpoint:
                 raise reply
             return generate_analysis(history, FakeModel(reply), now=lambda: FIXED_NOW)
 
-        app = create_app(lambda t: example_history(), analyst=analyst, frontend_dist=None)
+        app = create_app(
+            lambda t: example_history(), analyst=analyst, ai_quota=quota, frontend_dist=None
+        )
         return TestClient(app), calls
 
     def test_returns_claims_with_evidence_and_disclaimer(self) -> None:
@@ -368,3 +373,23 @@ class TestEndpoint:
         assert client.post("/api/companies/EXMP/ai-analysis").status_code == 502
         client.post("/api/companies/EXMP/ai-analysis")
         assert len(calls) == 2
+
+    def test_daily_limit(self) -> None:
+        client, calls = self.make_client(model_output(), DailyQuota(per_client=1, total=10))
+        assert client.post("/api/companies/EXMP/ai-analysis").status_code == 200
+        # Same company again: served from cache, so it doesn't count.
+        assert client.post("/api/companies/EXMP/ai-analysis").status_code == 200
+        assert len(calls) == 1
+
+    def test_limit_reached(self) -> None:
+        client, _ = self.make_client(model_output(), DailyQuota(per_client=0, total=10))
+        response = client.post("/api/companies/EXMP/ai-analysis")
+        assert response.status_code == 429
+        assert response.json()["error"]["code"] == "ai_rate_limited"
+
+    def test_failed_attempts_do_not_use_quota(self) -> None:
+        quota = DailyQuota(per_client=1, total=10)
+        client, calls = self.make_client(AIServiceError("busy"), quota)
+        client.post("/api/companies/EXMP/ai-analysis")
+        client.post("/api/companies/EXMP/ai-analysis")
+        assert len(calls) == 2  # the second try was allowed, not rate limited

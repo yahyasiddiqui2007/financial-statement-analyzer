@@ -187,6 +187,19 @@ describe("AI analysis", () => {
     expect(within(panel).getByText("No concerns passed verification.")).toBeInTheDocument();
   });
 
+  it("explains the daily limit without offering a retry", async () => {
+    route({
+      status: 429,
+      body: { error: { code: "ai_rate_limited", message: "You've reached the limit of 5 AI analyses per day." } },
+    });
+    render(<App />);
+    await search("EXMP");
+    await userEvent.click(await screen.findByRole("button", { name: "Generate AI analysis" }));
+    const alert = await screen.findByRole("alert");
+    expect(alert).toHaveTextContent("Daily AI limit reached");
+    expect(within(alert).queryByRole("button")).not.toBeInTheDocument();
+  });
+
   it("explains how to enable AI when no API key is configured", async () => {
     route({
       status: 503,

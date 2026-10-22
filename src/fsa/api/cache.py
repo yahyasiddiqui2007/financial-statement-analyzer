@@ -41,6 +41,14 @@ class TTLCache[T]:
         self._entries: dict[str, tuple[float, CachedValue[T]]] = {}
         self._lock = threading.Lock()
 
+    def peek(self, key: str) -> CachedValue[T] | None:
+        """The cached value if present and fresh, without loading anything."""
+        with self._lock:
+            entry = self._entries.get(key)
+            if entry is not None and self._clock() < entry[0]:
+                return entry[1]
+            return None
+
     def get_or_load(self, key: str, load: Callable[[], T]) -> CachedValue[T]:
         with self._lock:
             entry = self._entries.get(key)

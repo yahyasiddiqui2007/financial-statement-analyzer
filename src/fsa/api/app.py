@@ -7,6 +7,7 @@ Then open http://localhost:8000/docs for interactive documentation.
 
 from __future__ import annotations
 
+import mimetypes
 import os
 import threading
 from collections.abc import Callable
@@ -26,6 +27,7 @@ from fsa.ai import (
     generate_analysis,
 )
 from fsa.api.cache import TTLCache
+from fsa.api.limits import DailyQuota
 from fsa.api.presenter import present_ai_analysis, present_financials
 from fsa.api.schemas import AIAnalysisOut, ErrorOut, FinancialsOut
 from fsa.ingestion import (
@@ -63,6 +65,16 @@ class ServerMisconfiguredError(Exception):
     pass
 
 
+class AIRateLimitedError(Exception):
+    pass
+
+
+# The service worker and manifest control how the installed app updates, so they
+# must always be fresh, like index.html.
+NO_CACHE_FILES = frozenset({"sw.js", "manifest.webmanifest"})
+mimetypes.add_type("application/manifest+json", ".webmanifest")
+
+
 class FrontendFiles(StaticFiles):
     """Serves the built frontend.
 
@@ -73,7 +85,7 @@ class FrontendFiles(StaticFiles):
 
     async def get_response(self, path: str, scope: Scope) -> Response:
         response = await super().get_response(path, scope)
-        if response.media_type == "text/html":
+        if response.media_type == "text/html" or path in NO_CACHE_FILES:
             response.headers["Cache-Control"] = "no-cache"
         return response
 
@@ -105,6 +117,7 @@ def create_app(
     load_history: HistoryLoader | None = None,
     *,
     analyst: Analyst | None = None,
+    ai_quota: DailyQuota | None = None,
     frontend_dist: Path | None = DEFAULT_FRONTEND_DIST,
 ) -> FastAPI:
     """Build the app. Tests pass fakes for `load_history` and `analyst`, so nothing
@@ -113,6 +126,7 @@ def create_app(
     analyze = analyst or _claude_analyst()
     cache: TTLCache[FinancialHistory] = TTLCache(CACHE_TTL_SECONDS)
     ai_cache: TTLCache[AIAnalysis] = TTLCache(CACHE_TTL_SECONDS)
+    quota = ai_quota or DailyQuota.from_env()
     app = FastAPI(title="Financial Statement Analyzer API", version="0.1.0")
 
     @app.get("/api/health")
@@ -135,20 +149,32 @@ def create_app(
         response_model=AIAnalysisOut,
         responses={404: {"model": ErrorOut}, 502: {"model": ErrorOut}, 503: {"model": ErrorOut}},
     )
-    def ai_analysis(ticker: str) -> AIAnalysisOut:
-        """AI-written analysis grounded in this app's metrics. Each call may cost money,
-        so results are cached per company and data version."""
+    def ai_analysis(ticker: str, request: Request) -> AIAnalysisOut:
+        """AI-written analysis grounded in this app's metrics. Each new analysis costs
+        money, so results are cached and new ones are limited per client per day."""
         key = normalize_ticker(ticker)
         history = cache.get_or_load(key, lambda: loader(key))
         ai_key = f"{key}:{history.retrieved_at.isoformat()}"
-        analysis = ai_cache.get_or_load(ai_key, lambda: analyze(history.value))
-        return present_ai_analysis(analysis.value)
+
+        cached = ai_cache.peek(ai_key)
+        if cached is None:
+            client = request.client.host if request.client else "unknown"
+            refusal = quota.try_acquire(client)
+            if refusal:
+                raise AIRateLimitedError(refusal)
+            try:
+                cached = ai_cache.get_or_load(ai_key, lambda: analyze(history.value))
+            except Exception:
+                quota.release(client)  # a failed attempt doesn't use up the quota
+                raise
+        return present_ai_analysis(cached.value)
 
     for error_type, status, code in ERROR_RESPONSES:
         app.add_exception_handler(error_type, _error_handler(status, code))
     app.add_exception_handler(ServerMisconfiguredError, _error_handler(500, "server_misconfigured"))
     app.add_exception_handler(AIUnavailableError, _error_handler(503, "ai_not_configured"))
     app.add_exception_handler(AIServiceError, _error_handler(502, "ai_unavailable"))
+    app.add_exception_handler(AIRateLimitedError, _error_handler(429, "ai_rate_limited"))
 
     env_dist = os.environ.get("FSA_FRONTEND_DIST")
     dist = Path(env_dist) if env_dist else frontend_dist

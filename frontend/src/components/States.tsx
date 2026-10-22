@@ -57,6 +57,7 @@ const ERROR_COPY: Record<ApiErrorCode, { title: string; retry: boolean }> = {
   server_misconfigured: { title: "The server needs configuration", retry: false },
   ai_not_configured: { title: "AI analysis is not configured", retry: false },
   ai_unavailable: { title: "AI analysis failed", retry: true },
+  ai_rate_limited: { title: "Daily AI limit reached", retry: false },
   network: { title: "Can't reach the analysis server", retry: true },
   unknown: { title: "Something went wrong", retry: true },
 };
